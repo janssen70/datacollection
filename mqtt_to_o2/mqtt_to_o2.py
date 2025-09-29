@@ -4,19 +4,27 @@ import requests
 import os
 import paho.mqtt.client as mqtt
 
-IP_ADDRESS = '192.168.2.95'
+IP_ADDRESS = '127.0.0.1'
 # MQTT broker settings
-MQTT_BROKER = IP_ADDRESS
+MQTT_BROKER = os.getenv('MQTT_ADDRESS')
+MQTT_USERNAME = os.getenv('MQTT_USERNAME')
+MQTT_PASSWORD = os.getenv('MQTT_PASSWORD')
 MQTT_PORT = 1883
 MQTT_TOPIC = 'axis/+/event/tns:onvif/#'
 
+if not MQTT_BROKER or not MQTT_USERNAME or not MQTT_PASSWORD:
+    print('Error: Configure MQTT settings first')
+    exit(-1)
+
 # OpenObserve ingest endpoint + auth
-OO_URL = f'http://{IP_ADDRESS}:5080/api/default/ingest/metrics/_json'
+
+OO_ADDRESS = os.getenv('ZO_ADDRESS')
+OO_URL = f'http://{OO_ADDRESS}:5080/api/default/ingest/metrics/_json'
 OO_USER = os.getenv('ZO_ROOT_USER_EMAIL')
 OO_PASS = os.getenv('ZO_ROOT_USER_PASSWORD')
 
-if not OO_USER or not OO_PASS:
-    print('Configure Openobserve credentials first')
+if not OO_ADDRESS or not OO_USER or not OO_PASS:
+    print('Error: Configure Openobserve settings first')
     exit(-1)
 
 # Prepare a requests session for efficiency
@@ -62,6 +70,7 @@ def on_message(client, userdata, msg):
 
 def main():
     client = mqtt.Client()
+    client.username_pw_set(username="admin_user", password="Admin01@")
     client.on_connect = on_connect
     client.on_message = on_message
 
