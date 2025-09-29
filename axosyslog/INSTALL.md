@@ -77,3 +77,6 @@ curl --anyauth -u root:<password> 'http://192.168.200.12/axis-cgi/param.cgi?acti
 
 Note here that the Enabled parameter comes last, after the others have been
 applied.
+
+Syslog messages emitted by the device will now flow through AxoSyslog into Openobserve
+
