@@ -1,0 +1,3 @@
+[submodule "axis_device_tool"]
+	path = axis_device_tool
+	url = https://github.com/janssen70/axis_device_tool
