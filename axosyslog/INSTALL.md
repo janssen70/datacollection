@@ -1,12 +1,14 @@
-# AxoSyslog
+# Syslog
 
-AxoSyslog is a fork of syslog-ng, made by the original author of syslog-ng. The install procedure will also understand that the standard Ubuntu uses rsyslog and uninstall it first. You will end up with a replaced syslog that comes with a default configuration that mimics a default rsyslog. This makes the migration transparent/harmless on a standard Ubuntu. 
+Axis devices support remote syslog. This allows to store logging longer than what is possible on the device and to define views over the aggragated logging. That's what we will do using Openobserve. Openobserve is not a syslog server, to ingest the logs we need a syslog server that can forward the device log messages. We'll use AxoSyslog for this purpose.
+
+AxoSyslog is a fork of syslog-ng, made by the original author of syslog-ng. The procedure in this document was tested on Ubuntu 24.04/Linux Mint 22. The install procedure understands rsyslog is present and uninstalls it first. You end up with a replaced syslog that comes with a default configuration mimicing a default rsyslog. This makes migration straightforward.
 
 See: https://axoflow.com/docs/axosyslog-core/install/debian-ubuntu/
 
 # Installation and configuration
 
-Run as superuser:
+axoflow need to be installed as APT repository. Run as superuser:
 
 ```sh
 #!/bin/sh
@@ -79,4 +81,5 @@ Note here that the Enabled parameter comes last, after the others have been
 applied.
 
 Syslog messages emitted by the device will now flow through AxoSyslog into Openobserve
+
 
