@@ -1,0 +1,24 @@
+# Service-wrapper around Openobserve
+#
+# Steps:
+#  - cp openobserve.service /etc/systemd/service
+#  - sudo systemctl daemon-reload
+#  - sudo systemctl enable openobserve
+#  - sudo systemctl start openobserve
+
+[Unit]
+Description=Openobserve
+After=network.target
+
+[Service]
+Type=simple
+User=erik
+Group=erik
+EnvironmentFile=/home/erik/datacollection/settings.env
+WorkingDirectory=/home/erik/datacollection/openobserve
+ExecStart=/home/erik/datacollection/openobserve/openobserve
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

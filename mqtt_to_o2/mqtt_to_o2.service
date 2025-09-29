@@ -1,0 +1,24 @@
+# Service-wrapper around mqtt -> Openobserve python script
+#
+# Steps:
+#  - cp mqtt_to_02.service /etc/systemd/service
+#  - sudo systemctl daemon-reload
+#  - sudo systemctl enable mqtt_to_02
+#  - sudo systemctl start mqtt_to_02
+
+[Unit]
+Description=Subscribe to MQTT messages and forward to Openobserve
+After=network.target
+
+[Service]
+Type=simple
+User=erik
+Group=erik
+EnvironmentFile=/home/erik/datacollection/settings.env
+WorkingDirectory=/home/erik/datacollection/mqtt_to_o2
+ExecStart=python3 mqtt_to_o2.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
