@@ -13,7 +13,7 @@ It uses these tools:
   - Mosquitto
   - Several Python scripts:
     - mqtt_to_02: listen to mqtt and push into Openobserve
-    - <tbd>: configure mqtt connection on devices
+    - axis_device_tool: configure mqtt connection on devices
 
 The requirements that led to this choice were:
 
