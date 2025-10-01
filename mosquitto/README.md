@@ -36,3 +36,16 @@ For example, this publishes only a single event on MQTT:
 ```sh
 python3 setup_devices.py -f devices.xlsx -b 192.168.200.102 -t onvif:AudioSource/axis:TriggerLevel
 ```
+
+## Forward device publications into Openobserve
+
+Adjust the provided `mqtt_to_o2.service` to the local situation and run:
+
+```sh
+sudo cp mqtt_to_o2.service /etc/systemd/system
+sudo systemctl start mqtt_to_o2
+sudo systemctl status mqtt_to_o2
+sudo systemctl enable mqtt_to_o2
+```
+
+Fix any problems along the way

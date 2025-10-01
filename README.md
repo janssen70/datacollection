@@ -8,12 +8,12 @@ A bunch of scripts and configuration files to help collect data from a number of
 
 It uses these tools:
 
-  - Openobserve
-  - AxoSyslog
-  - Mosquitto
-  - Several Python scripts:
-    - mqtt_to_02: listen to mqtt and push into Openobserve
-    - axis_device_tool: configure mqtt connection on devices
+  - [Openobserve](https://openobserve.ai/)
+  - [AxoSyslog](https://axoflow.com/docs/axosyslog-core/intro/)
+  - [Mosquitto](https://mosquitto.org/)
+  - Several Python scripts from this repo:
+    - mqtt_to_02.py: listen to mqtt and push into Openobserve
+    - setup_devices.oy: configure mqtt connection on devices
 
 The requirements that led to this choice were:
 
