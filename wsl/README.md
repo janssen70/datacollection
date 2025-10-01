@@ -17,7 +17,7 @@ networkingMode = mirrored
 ```
 
 ## Installation
-- Enable WSL opening cmd.exe or Powershell as Administrator and type `wsl
+- Enable WSL by opening cmd.exe or Powershell as Administrator and type `wsl
   --install`
 - Install a Linux distribution through Microsoft app store. Recommended is Ubuntu 24.04 because the AxoSyslog instructions match that version.
 - Note: After download, in case your windows configuration uses another drive
@@ -51,6 +51,7 @@ Or use the browser on Windows. This should yield some filelist content of the
 directory where the http server was started. When there is an error instead, try to
 solve this first. Then try the same from another host, now using the
 external IP address of the Windows device.
+
 
 
 
