@@ -1,0 +1,1 @@
+curl --anyauth -u root:ThisIsAnAxisDevice@1 'http://192.168.200.10/axis-cgi/param.cgi?action=update&API.RemoteSyslog1.Server1.Address=192.168.200.102&API.RemoteSyslog1.Server1.Port=514&API.RemoteSyslog1.Server1.Protocol=TCP&API.RemoteSyslog1.Server1.Severity=Notice&API.RemoteSyslog1.Server1.SyslogFormat=RFC3164&API.RemoteSyslog1.Enabled=true'
