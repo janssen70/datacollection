@@ -27,16 +27,13 @@ networkingMode = mirrored
 
 ## Connectivity check
 **Important:** One gotcha is that despite the mirroring, he
-Linux side is not reachableon the Windows side using the external IP address. You need to use
-localhost/127.0.0.1 instead. From other machines however, one can reach the
+Linux side is not reachable on the Windows side using the external IP address. You need to use
+127.0.0.1 (localhost) instead. From other machines however, one can reach the
 services running in the WSL Linux without problem, using the IP address of the
-Windows host. The following steps provide a high-level howto, you will need
-the Windows machine itself and another device, to test the network connection
-into WSL.
+Windows host.
 
-Do a basic connectivity check directly after install so that we can rule this part
-out later. On Ubuntu, we can use Python to start an ad-hoc webserver on
-whatever port we like.
+Do a basic connectivity check directly after install so that we can rule out this part later. On Ubuntu, use Python to start an ad-hoc webserver on
+port 5080.
 ```
 python3 -m http.server -b 0.0.0.0 5080
 ```
@@ -47,10 +44,11 @@ On the Windows host, open Windows Powershell and try:
 curl http://127.0.0.1:5080
 ```
 
-Or use the browser on Windows. This should yield some filelist content of the
+Or use the browser and type the url there. This should yield some filelist content of the
 directory where the http server was started. When there is an error instead, try to
 solve this first. Then try the same from another host, now using the
 external IP address of the Windows device.
+
 
 
 
