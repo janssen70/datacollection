@@ -55,8 +55,9 @@ sudo systemctl status syslog-ng
 
 # Setup of axis devices
 
-Modern Axis OS versions have a [JSON API](https://developer.axis.com/vapix/network-video/remote-syslog/) available to set a remote syslog target. For
-older devices, details vary, [described here](https://help.axis.com/en-us/axis-os-knowledge-base#syslog).
+Modern Axis OS versions have a [JSON API](https://developer.axis.com/vapix/network-video/remote-syslog/)
+available to set a remote syslog target. For older devices, details vary, 
+[described here](https://help.axis.com/en-us/axis-os-knowledge-base#syslog).
 
 It is also possible to set syslog configuration using parameters
 (`axis-cgi/param.gi`) by setting the following parameters. The list can be
@@ -77,9 +78,19 @@ Using curl it would look as follows:
 curl --anyauth -u root:<password> 'http://192.168.200.12/axis-cgi/param.cgi?action=update&API.RemoteSyslog1.Server1.Address=192.168.200.102&API.RemoteSyslog1.Server1.Port=514&API.RemoteSyslog1.Server1.Protocol=TCP&API.RemoteSyslog1.Server1.Severity=Notice&API.RemoteSyslog1.Server1.SyslogFormat=RFC3164&API.RemoteSyslog1.Enabled=true'
 ```
 
-Note here that the Enabled parameter comes last, after the others have been
-applied.
+Note the Enabled parameter comes last, after the others have been
+applied. Syslog messages emitted by the device will now flow through AxoSyslog into Openobserve
 
-Syslog messages emitted by the device will now flow through AxoSyslog into Openobserve
+Another setting that can prove usefull is:
+
+```
+System.AccessLog=On
+```
+
+See the Axis [Access log documentation](https://help.axis.com/en-us/axis-os-knowledge-base#device-access-logging). 
+Depending on the amount of traffic initiated by management systems (Video management systems, Axis Device Manager, ...) 
+the amount of syslog data can rise a lot (times 100 or more).
+
+
 
 
