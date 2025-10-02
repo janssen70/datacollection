@@ -1,0 +1,6 @@
+root.API.RemoteSyslog1.Enabled=true
+root.API.RemoteSyslog1.Server1.Address=192.168.200.102
+root.API.RemoteSyslog1.Server1.Port=514
+root.API.RemoteSyslog1.Server1.Protocol=TCP
+root.API.RemoteSyslog1.Server1.Severity=Notice
+root.API.RemoteSyslog1.Server1.SyslogFormat=RFC3164
