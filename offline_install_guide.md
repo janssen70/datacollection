@@ -1,9 +1,9 @@
 # Downloading packages for offline use
 
-In case the target system has no outside connection we can prepare the set of
-required files up-front. Of course, some file sharing mechanism must be
-discussed to make the files available on the target. This instruction assumes
-Debian package management.
+For offline systems we need to prepare the set of
+required files up-front. This instruction assumes
+Debian package management. Of course, some file sharing mechanism must be
+present to make the files available on the target. 
 
 Outline:
 
