@@ -17,7 +17,7 @@ Outline:
   python3 datacollection/getpackages.py mosquitto packages
   python3 datacollection/getpackages.py axosyslog packages
   ```
-- Get the packages folder transferred to target system
+- Get the packages- _and_ datacollection folder transferred to target system
 - Follow instructions below to install 
 
 # Installing Collected .deb Packages on an offline System
