@@ -34,3 +34,9 @@ Quick & dirty, ChatGPT assisted, script to subscribe to "axis/+/event/tns:onvif/
 Easiest way to get started is to clone this repo in a user root folder, e.g. `/home/erik` so that you end up with `/home/erik/datacollection`. 
 This isn't mandatory, just less paths to change to make things work. Read the various `README.md` files to get started with each of the tools. 
 The file settings.env and the individual service files need to be adapted to the local situation. 
+
+```sh
+git clone https://github.com/janssen70/datacollection
+cd datacollection
+git submodule update --init --recursive
+```
