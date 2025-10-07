@@ -26,6 +26,28 @@ The requirements that led to this choice were:
 
 The files provided here work for me. You will need to adapt IP addresses, pathnames, usernames and so on to your own situation.
 
+## Overview
+This diagram shows the flow of monitoring data:
+```mermaid
+flowchart TD
+   D@{ shape: processes, label: "Devices" }
+   M[Mosquitto]
+   M2[mqtt_to_o2]
+   L[AxoSyslog]
+   subgraph Openobserve
+      O[Openobserve]
+      S[(Storage)]
+      W[WebGUI]
+   end
+
+D -- syslog --> L
+D -- mqtt --> M
+O <--> S
+M --> M2
+M2 --> O
+L --> O
+O --> W
+```
 <!-- # mqtt_to_02
 
 Quick & dirty, ChatGPT assisted, script to subscribe to "axis/+/event/tns:onvif/#" and push into Openobserve metrics endpoint -->
