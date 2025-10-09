@@ -3,7 +3,9 @@
 For offline systems we need to prepare the set of
 required files up-front. This instruction assumes
 Debian package management. Of course, some file sharing mechanism must be
-present to make the files available on the target. 
+present to make the files available on the target.
+
+**Important:** Replacing rsyslog using offline install is not as easy as installing axosyslog in the normal way
 
 Outline:
 
