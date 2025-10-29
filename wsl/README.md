@@ -33,8 +33,8 @@ Linux side is not reachable on the Windows side using the external IP address. Y
 services running in the WSL Linux without problem, using the IP address of the
 Windows host.
 
-Do a basic connectivity check directly after install so that we can rule out this part later. On Ubuntu, use Python to start an ad-hoc webserver on
-port 5080.
+Do a basic connectivity check directly after install so that we can rule out this part later. On Ubuntu, use Python to start an ad-hoc webserver. It makes sense to use
+port 5080 as that is the port that will be used by Openobserve. But any port will do, as long as you use the same number on the Windows side. For low portnumbers, like 80 for web, you need to type ```sudo``` in front of the command.
 ```
 python3 -m http.server -b 0.0.0.0 5080
 ```
@@ -49,6 +49,7 @@ Or use the browser and type the url there. This should yield some filelist conte
 directory where the http server was started. When there is an error instead, try to
 solve this first. Then try the same from another host, now using the
 external IP address of the Windows device.
+
 
 
 
