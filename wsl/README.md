@@ -3,8 +3,9 @@
 WSL, Windows Subsystem for Linux, can be seen as virtual machine running
 Linux. Windows runs as the Host OS and Linux as the Guest OS. WSL takes care
 of integration between Host and Guest. The datacollection tools run nicely on WSL 2, 
-and mirrored network mode. Mirrored network mode allows the Windows host and Linux virtual machine to
-share the same external IP address.
+and mirrored network mode. Mirrored network mode allows the Windows host and Linux 
+virtual machine to share the same external IP address. This makes it possible that 
+services inside the Linux guest are reachable from outside.
 
 Mirrored mode is enabled by creating a configfile. 
 To get there, type %UserProfile% in the Windows Explorer location bar.
@@ -48,6 +49,7 @@ Or use the browser and type the url there. This should yield some filelist conte
 directory where the http server was started. When there is an error instead, try to
 solve this first. Then try the same from another host, now using the
 external IP address of the Windows device.
+
 
 
 
